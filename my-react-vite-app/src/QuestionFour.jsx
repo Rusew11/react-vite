@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,6 +20,7 @@ const Question = styled.h1`
   width: 100%;
   max-width: 583px;
   font-family: Poppins, sans-serif;
+  padding: 10px;
 `;
 
 const OptionsContainer = styled.div`
@@ -28,6 +30,11 @@ const OptionsContainer = styled.div`
   width: 100%;
   margin-bottom: 2rem;
   overflow-x: auto;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const OptionButton = styled.button`
@@ -47,8 +54,14 @@ const OptionButton = styled.button`
     background-color: ${(props) => (props.selected ? "#0072a3" : "#0072a3")};
     color: white;
   }
+
   &:last-child {
     margin-right: 0;
+  }
+
+  @media (max-width: 750px) {
+    width: 80%;
+    margin-bottom: 10px;
   }
 `;
 
@@ -98,9 +111,9 @@ const QuestionFour = () => {
   const { state } = useLocation();
   const [selectedOption, setSelectedOption] = useState(state?.selectedOption || null);
   const navigate = useNavigate();
+
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-    console.log("You selected:", option);
   };
 
   const handleNextClick = () => {

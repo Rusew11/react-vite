@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
 
   html, body {
     height: 100%;
-    overflow: hidden;
     width: 100%;
   }
 
@@ -26,9 +25,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin: 0;
-  overflow: hidden;
 `;
 
 const TopHalf = styled.div`
@@ -43,6 +40,10 @@ const TopHalf = styled.div`
   background-position: center;
   position: relative;
   text-align: center;
+  padding: 90px;
+  @media (max-width: 1140px) {
+    padding: 90px 10px;
+  }
 `;
 
 const Title = styled.h1`
@@ -60,6 +61,11 @@ const Subtitle = styled.p`
   color: white;
   margin-bottom: 20px;
   max-width: 327px;
+
+  @media (max-width: 1140px) {
+    font-size: 18px; /* Increased text size under 1140px */
+    line-height: 22px; /* Adjust line height accordingly */
+  }
 `;
 
 const Button = styled.button`
@@ -81,13 +87,16 @@ const Button = styled.button`
 
 const BottomHalf = styled.div`
   width: 100%;
-  height: 50vh;
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
   flex-direction: column;
+
+  @media (max-width: 1140px) {
+  padding-top: 50px;
+  }
 `;
 
 const ColumnsContainer = styled.div`
@@ -100,17 +109,30 @@ const ColumnsContainer = styled.div`
   background-color: #fff;
   padding: 2rem;
   border-radius: 8px;
+
+  @media (max-width: 1140px) {
+    flex-direction: column;
+    width: 100%; /* Set the container to full width */
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
 `;
 
 const Column = styled.div`
   flex: 1;
   text-align: center;
   width: 350px;
-  height: 450px;
   border-radius: 8px;
   position: relative;
   font-family: 'Proxima Nova', sans-serif;
   margin: 30px;
+  position: relative;
+  top: -175px;
+
+  @media (max-width: 1140px) {
+    width: 100%;
+    margin: 10px 0;
+    height: auto;
+  }
 `;
 
 const HeartIcon = styled.div`
@@ -147,6 +169,7 @@ const ColumnText = styled.p`
   font-family: 'Proxima Nova', sans-serif;
   font-size: 16px;
   color: #555;
+  padding: 10px;
   line-height: 1.6;
 `;
 
@@ -156,6 +179,10 @@ const ColumnImage = styled.img`
   max-height: 250px;
   object-fit: cover;
   border-radius: 8px;
+  // @media (max-width: 1140px) {
+  //   width: auto;
+  //   object-fit: contain;
+  // }
 `;
 
 const Price = styled.p`

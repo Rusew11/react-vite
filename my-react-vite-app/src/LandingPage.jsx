@@ -52,6 +52,12 @@ const Title = styled.h1`
   line-height: 44px;
   color: white;
   margin-bottom: 10px;
+
+    @media screen and (max-width: 750px) {
+    font-size: 28px;
+    margin-bottom: 15px;
+    padding: 0 20px;
+  }
 `;
 
 const Subtitle = styled.p`

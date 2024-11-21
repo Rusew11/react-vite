@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./landingPage";
-import QuizPage from "./quizPage";
+import QuizPage from "./QuizPage";
 import QuestionTwo from "./QuestionTwo";
 import QuestionThree from "./QuestionThree";
 import QuestionFour from "./QuestionFour";

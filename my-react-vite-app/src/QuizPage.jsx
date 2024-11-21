@@ -29,6 +29,12 @@ const Question = styled.h1`
   width: 100%;
   max-width: 583px;
   font-family: Poppins, sans-serif;
+
+  @media screen and (max-width: 750px) {
+    font-size: 1.5rem; /* Adjust font size for small screens */
+    margin-bottom: 1.5rem; /* Reduce margin for small screens */
+    padding: 0 20px; /* Add padding to avoid text touching the edges */
+  }
 `;
 
 const OptionsContainer = styled.div`
@@ -51,10 +57,16 @@ const OptionButton = styled.button`
   transition: background-color 0.3s ease;
   width: 15%;
   margin: 10px;
+  text-align: center;
 
   &:hover {
     background-color: ${(props) => (props.selected ? "#0072a3" : "#0072a3")};
     color: white;
+  }
+
+  @media screen and (max-width: 750px) {
+    width: 45%; /* Increase button width for small screens */
+    font-size: 1rem; /* Adjust font size */
   }
 `;
 
@@ -84,6 +96,10 @@ const NextButton = styled.button`
   &:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 750px) {
+    width: 100%; /* Ensure the Next button takes full width on small screens */
   }
 `;
 

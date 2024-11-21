@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-// Styled components (same as your previous code)
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,15 +20,24 @@ const Question = styled.h1`
   width: 100%;
   max-width: 583px;
   font-family: Poppins, sans-serif;
+
+  @media (max-width: 1140px) {
+  padding-top: 80px;
+  }
 `;
 
 const OptionsContainer = styled.div`
   display: flex;
-  justify-content: center; /* Center the buttons horizontally */
-  align-items: center;    /* Center the buttons vertically */
-  width: 100%;            /* Ensure container spans full width */
-  flex-wrap: wrap;        /* Allow wrapping if necessary (in case of small screen) */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 1140px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const OptionButton = styled.button`
@@ -37,16 +45,21 @@ const OptionButton = styled.button`
   color: ${(props) => (props.selected ? "white" : "#008cba")};
   border: 2px solid ${(props) => (props.selected ? "#0072a3" : "#008cba")};
   padding: 1rem;
-  font-size: 0.8rem; /* Smaller font size */
+  font-size: 0.8rem;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  width: 15%; /* Fixed width to ensure buttons stay on one row */
-  margin: 10px; /* Add space between buttons */
+  width: 15%;
+  margin: 10px;
 
   &:hover {
     background-color: ${(props) => (props.selected ? "#0072a3" : "#0072a3")};
     color: white;
+  }
+
+  @media screen and (max-width: 1140px) {
+    width: 80%;
+    margin: 10px 0;
   }
 `;
 
@@ -76,6 +89,10 @@ const NextButton = styled.button`
   &:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 1140px) {
+    width: 80%;
   }
 `;
 

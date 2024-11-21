@@ -18,6 +18,7 @@ const Question = styled.h1`
   margin-bottom: 2rem;
   text-align: center;
   font-family: Poppins, sans-serif;
+  padding: 10px;
 `;
 
 const Options = styled.div`
@@ -28,6 +29,11 @@ const Options = styled.div`
   max-width: 100%;
   margin-bottom: 2rem;
   flex-wrap: wrap;
+
+  @media (max-width: 1140px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const OptionButton = styled.button`
@@ -48,8 +54,9 @@ const OptionButton = styled.button`
     color: white;
   }
 
-  @media (max-width: 600px) {
-    width: 45%;
+  @media (max-width: 1140px) {
+    width: 80%;
+    margin-bottom: 10px;
   }
 `;
 

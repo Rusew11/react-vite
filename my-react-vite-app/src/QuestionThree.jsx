@@ -20,6 +20,12 @@ const Question = styled.h1`
   width: 100%;
   max-width: 583px;
   font-family: Poppins, sans-serif;
+  padding: 1rem; /* Add padding to the question */
+
+  @media screen and (max-width: 1450px) {
+    padding-top: 170px;
+    font-size: 1.8rem
+  }
 `;
 
 const OptionsContainer = styled.div`
@@ -29,6 +35,11 @@ const OptionsContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 2rem;
+
+  @media screen and (max-width: 1450px) {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+  }
 `;
 
 const Row = styled.div`
@@ -36,6 +47,11 @@ const Row = styled.div`
   justify-content: center;
   margin-bottom: 1rem;
   width: 100%;
+
+  @media screen and (max-width: 1450px) {
+    flex-direction: column; /* Stack buttons vertically under 1450px */
+    align-items: center;
+  }
 `;
 
 const OptionButton = styled.button`
@@ -50,12 +66,18 @@ const OptionButton = styled.button`
   width: ${(props) => (props.isSecondRow ? "15%" : "20%")};
   margin-right: 10px;
   white-space: nowrap;
+
   &:hover {
     background-color: ${(props) => (props.selected ? "#0072a3" : "#0072a3")};
     color: white;
   }
   &:last-child {
     margin-right: 0;
+  }
+
+  @media screen and (max-width: 1450px) {
+    width: 80%;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -85,6 +107,10 @@ const NextButton = styled.button`
   &:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 1450px) {
+    width: 80%; /* Button width for smaller screens */
   }
 `;
 
